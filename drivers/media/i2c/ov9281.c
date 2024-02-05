@@ -1417,4 +1417,3 @@ module_exit(sensor_mod_exit);
 
 MODULE_DESCRIPTION("OmniVision ov9281 sensor driver");
 MODULE_LICENSE("GPL v2");
-a
