@@ -5,11 +5,11 @@
  */
 
 &csi2_dphy0_hw {
-	status = "enable";
+	status = "okay";
 };
 
 &csi2_dphy0 {
-	status = "enable";
+	status = "okay";
 	ports {
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -43,7 +43,7 @@
 
 	vm149c_p1: vm149c-p1@c {
 		compatible = "silicon touch,vm149c";
-		status = "enable";
+		status = "okay";
 		reg = <0x0c>;
 		rockchip,camera-module-index = <1>;
 		rockchip,camera-module-facing = "back";
@@ -51,7 +51,7 @@
 
 	ov9281_1: ov9281-1@10 {
 		compatible = "ovti,ov9281";
-		status = "enable";
+		status = "okay";
 		reg = <0x10>;
 		clocks = <&cru CLK_MIPI_CAMARAOUT_M3>;
 		clock-names = "xvclk";
@@ -74,7 +74,7 @@
 
 	dw9714_p1: dw9714-p1@c {
 		compatible = "dongwoon,dw9714";
-		status = "enable";
+		status = "okay";
 		reg = <0x0c>;
 		rockchip,camera-module-index = <0>;
 		rockchip,vcm-start-current = <10>;
@@ -85,7 +85,7 @@
 };
 
 &mipi2_csi2 {
-	status = "enable";
+	status = "okay";
 	ports {
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -111,7 +111,7 @@
 };
 
 &rkcif_mipi_lvds2 {
-	status = "enable";
+	status = "okay";
 	port {
 		cif_mipi_in2: endpoint {
 			remote-endpoint = <&mipi2_csi2_output>;
@@ -120,7 +120,7 @@
 };
 
 &rkcif_mipi_lvds2_sditf {
-	status = "enable";
+	status = "okay";
 	port {
 		mipi2_lvds_sditf: endpoint {
 			remote-endpoint = <&isp0_vir1>;
@@ -129,7 +129,7 @@
 };
 
 &rkisp0_vir1 {
-	status = "enable";
+	status = "okay";
 	port {
 		#address-cells = <1>;
 		#size-cells = <0>;
