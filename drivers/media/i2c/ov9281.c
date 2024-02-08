@@ -1267,9 +1267,10 @@ static int ov9281_probe(struct i2c_client *client,
 	
 	if (IS_ERR(ov9281->pwdn_gpio)) {
  		dev_warn(dev, "Failed to get pwdn-gpios\n");
-	} else {
-		gpiod_direction_output(ov9281->pwdn_gpio, 0);
 	}
+	// else {
+	//	gpiod_direction_output(ov9281->pwdn_gpio, 0);
+	//}
 
 	ov9281->pinctrl = devm_pinctrl_get(dev);
 	if (!IS_ERR(ov9281->pinctrl)) {
