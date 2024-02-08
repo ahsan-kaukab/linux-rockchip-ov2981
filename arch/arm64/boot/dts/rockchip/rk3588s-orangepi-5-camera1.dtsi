@@ -18,9 +18,9 @@
 			#address-cells = <1>;
 			#size-cells = <0>;
 
-			mipi_in_ucam0: endpoint@1 {
-				reg = <1>;
-				remote-endpoint = <&ov9281_out1>;
+			mipi_in_ucam0: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&ov9281_out2>;
 				data-lanes = <1>;
 			};
 		};
@@ -40,6 +40,15 @@
 	status = "okay";
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c7m0_xfer>;
+
+	vm149c_p1: vm149c-p1@c {
+		compatible = "silicon touch,vm149c";
+		status = "disabled";
+		reg = <0x0c>;
+		rockchip,camera-module-index = <1>;
+		rockchip,camera-module-facing = "back";
+	};
+
 	ov9281_1: ov9281-1@60 {
 		compatible = "ovti,ov9281";
 		status = "okay";
@@ -56,11 +65,22 @@
 		rockchip,camera-module-lens-name = "default";
 		#lens-focus = <&vm149c_p1>;
 		port {
-			ov9281_out1: endpoint {
+			ov9281_out2: endpoint {
 				remote-endpoint = <&mipi_in_ucam0>;
 				data-lanes = <1>;
 			};
 		};
+	};
+
+	dw9714_p1: dw9714-p1@c {
+		compatible = "dongwoon,dw9714";
+		status = "disabled";
+		reg = <0x0c>;
+		rockchip,camera-module-index = <0>;
+		rockchip,vcm-start-current = <10>;
+		rockchip,vcm-rated-current = <85>;
+		rockchip,vcm-step-mode = <5>;
+		rockchip,camera-module-facing = "back";
 	};
 };
 
